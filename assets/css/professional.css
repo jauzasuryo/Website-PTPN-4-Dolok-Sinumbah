@@ -961,6 +961,71 @@ section, .section { padding-block: 80px; }
 .portfolio .portfolio-card .image-container .gallery-external-cover { overflow: hidden; }
 .portfolio .portfolio-card .image-container img { display: block; }
 
+/* Responsive company leadership section. */
+.organization-section {
+  margin-top: 3.5rem;
+  padding-top: 3rem;
+  border-top: 1px solid var(--line);
+}
+.organization-heading { padding-bottom: 1.5rem; }
+.organization-source-note {
+  margin-bottom: 1.5rem;
+  padding: 1rem 1.25rem;
+  border-left: 3px solid var(--gold);
+  border-radius: var(--radius-sm);
+  background: var(--bg-alt);
+}
+.organization-source-note p { margin: 0; color: var(--muted); font-size: .9375rem; }
+.organization-leadership-group + .organization-leadership-group { margin-top: 2.75rem; }
+.organization-group-heading {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1.25rem;
+  color: var(--heading-color);
+  font: 700 clamp(1.2rem, 1rem + .7vw, 1.55rem)/1.3 var(--heading-font);
+  letter-spacing: .025em;
+}
+.organization-group-heading::before,
+.organization-group-heading::after { content: ""; flex: 1; height: 1px; background: var(--line); }
+.organization-group-heading span { flex: 0 0 auto; }
+.organization-swiper .swiper-wrapper { align-items: stretch; }
+.organization-swiper .swiper-slide { display: flex; width: 30%; height: auto; }
+.organization-profile-card {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  min-width: 0;
+  overflow: hidden;
+  border: 1px solid var(--line);
+  border-radius: var(--radius-lg);
+  background: #fff;
+  box-shadow: var(--shadow-sm);
+  transition: transform .2s var(--ease), box-shadow .2s var(--ease);
+}
+.organization-profile-card:hover { transform: translateY(-4px); box-shadow: var(--shadow-md); }
+.organization-profile-media { aspect-ratio: 4 / 5; overflow: hidden; margin: 0; background: var(--bg-alt); }
+.organization-profile-media img { display: block; width: 100%; height: 100%; object-fit: cover; object-position: center 20%; }
+.organization-profile-content { display: flex; flex: 1; flex-direction: column; align-items: flex-start; padding: 1.125rem 1.125rem 1.25rem; border-top: 0; }
+.organization-profile-content h3 { margin: 0 0 .35rem; color: var(--heading-color); font: 700 1rem/1.35 var(--heading-font); }
+.organization-profile-content p { margin: 0; color: var(--muted); font-size: .9rem; line-height: 1.5; }
+.organization-profile-content a { margin-top: auto; padding-top: .85rem; color: var(--accent-color); font-size: .875rem; font-weight: 600; text-decoration: none; }
+.organization-profile-content a:hover { color: var(--accent-strong); text-decoration: underline; text-underline-offset: 3px; }
+.organization-slider-controls { display: flex; align-items: center; justify-content: center; gap: 1rem; margin-top: .85rem; }
+.organization-slider-button { display: grid; width: 40px; height: 40px; place-items: center; border: 1px solid var(--line); border-radius: 50%; background: #fff; color: var(--accent-color); box-shadow: var(--shadow-sm); }
+.organization-slider-button:hover:not(:disabled) { background: var(--accent-color); color: #fff; }
+.organization-slider-button:disabled { opacity: .45; cursor: default; }
+.organization-slider-controls .swiper-pagination { position: static; width: auto; }
+.organization-slider-controls .swiper-pagination-bullet-active { background: var(--accent-color); }
+.organization-source-link { margin: 1.25rem 0 0; font-size: .875rem; }
+.organization-source-link a { color: var(--accent-color); font-weight: 600; }
+@media (max-width: 991px) { .organization-swiper .swiper-slide { width: 46%; } }
+@media (max-width: 575px) {
+  .organization-section { margin-top: 2.5rem; padding-top: 2rem; }
+  .organization-leadership-group + .organization-leadership-group { margin-top: 2rem; }
+  .organization-swiper .swiper-slide { width: 78%; }
+}
+
 /* Align statistics and Visi/Misi cards on shared row. */
 .about-summary-row .stats-wrapper,
 .about-summary-row .vision-mission { margin-top: 0; }
