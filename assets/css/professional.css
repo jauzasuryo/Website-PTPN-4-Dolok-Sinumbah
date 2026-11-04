@@ -427,8 +427,9 @@ section, .section {
   grid-template-columns: minmax(0, 1fr);
   align-items: start;
   gap: 14px;
-  margin: 14px 0 0 2rem;
+  margin: 14px 0 0;
 }
+.about .image-wrapper { padding-left: 0; }
 .about .vision-mission-item {
   min-width: 0;
   background: #fff;
@@ -959,6 +960,10 @@ section, .section { padding-block: 80px; }
 }
 .portfolio .portfolio-card .image-container .gallery-external-cover { overflow: hidden; }
 .portfolio .portfolio-card .image-container img { display: block; }
+
+/* Align statistics and Visi/Misi cards on shared row. */
+.about-summary-row .stats-wrapper,
+.about-summary-row .vision-mission { margin-top: 0; }
 
 /* Equal-height map and details card on desktop; stack naturally on mobile. */
 .contact .row.align-items-stretch > [class*="col-"] { display: flex; }
