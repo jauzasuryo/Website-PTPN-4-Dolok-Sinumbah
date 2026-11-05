@@ -232,17 +232,6 @@ section, .section {
 }
 .read-more:hover, .explore-link:hover { color: var(--accent-strong); gap: 10px; }
 
-/* Scroll top */
-.scroll-top {
-  width: 44px; height: 44px;
-  border-radius: var(--radius-sm);
-  background: var(--accent-color);
-  box-shadow: var(--shadow-md);
-  right: 20px; bottom: 20px;
-}
-.scroll-top i { color: #fff; font-size: 26px; }
-.scroll-top:hover { background: var(--accent-strong); transform: translateY(-3px); }
-
 /* ============ 5. HEADER & NAVIGASI ============ */
 .header {
   padding: 0;
@@ -1085,4 +1074,44 @@ section, .section { padding-block: 80px; }
 }
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after { scroll-behavior: auto !important; }
+}
+
+
+/* Persistent photo zoom control and requested content alignment. */
+.portfolio .image-container > .gallery-zoom-link {
+  position: absolute;
+  top: .75rem;
+  right: .75rem;
+  z-index: 4;
+  display: flex;
+  width: 44px;
+  height: 44px;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background: var(--accent-color);
+  color: #fff;
+  box-shadow: var(--shadow-md);
+  font-size: 1.25rem;
+}
+.portfolio .image-container > .gallery-zoom-link:hover,
+.portfolio .image-container > .gallery-zoom-link:focus-visible {
+  background: var(--gold);
+  color: #1a1305;
+}
+.main section p { text-align: justify !important; }
+.main section .section-title p,
+.main section .hero p,
+.main section .page-title p { text-align: center !important; }
+.main section .organization-profile-content p,
+.main section .contact-details p { text-align: left !important; }
+.hero .hero-buttons .btn.btn-primary:hover,
+.hero .hero-buttons .btn.btn-primary:focus-visible,
+.hero .hero-buttons .btn.btn-outline:hover,
+.hero .hero-buttons .btn.btn-outline:focus-visible,
+.hero .hero-buttons .btn.btn-primary:active,
+.hero .hero-buttons .btn.btn-outline:active {
+  background: var(--gold);
+  border-color: var(--gold);
+  color: #1a1305;
 }
