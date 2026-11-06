@@ -36,6 +36,16 @@ assert.doesNotMatch(home, /src="assets\/img\/features\/features-[14]\.webp"/, 's
 const serviceCards = [...home.matchAll(/<article class="service-card h-100">[\s\S]*?<\/article>/g)].map(([card]) => card);
 const serviceImageFiles = ['assets/img/foto%20cover%20pengolahan%20minyak%20cpo%202.png', 'assets/img/foto%20tangki%20cpo', 'assets/img/gambar%20biji%20kernels.png'];
 for (const image of serviceImageFiles) assert.equal(home.includes(`src="${image}"`), true, `${image}: local service image referenced`);
+const galleryImageTopics = {
+  'Gambar%20keberlanjutan%201.png': 'Pengelolaan Hasil Samping Sawit',
+  'Gambar%20keberlanjutan%202.png': 'Pengelolaan Limbah Cair',
+  'Gambar%20keberlanjutan%203.png': 'Penghijauan dan Penanaman Pohon',
+  'Gambar%20keberlanjutan%204.png': 'Diskusi Teknis Instalasi Proses',
+  'Gambar%20keberlanjutan%205.png': 'Aksi Bersih Lingkungan'
+};
+for (const [image, title] of Object.entries(galleryImageTopics)) {
+  assert.match(home, new RegExp(`<img src="assets/img/${image}"[\\s\\S]*?<h3>${title}</h3>`), `${title}: gallery image matches adjacent topic`);
+}
 for (const [title, image] of Object.entries({
   'Pengolahan TBS': 'assets/img/foto%20cover%20pengolahan%20minyak%20cpo%202.png',
   'Minyak Sawit Mentah (CPO)': 'assets/img/foto%20tangki%20cpo',
