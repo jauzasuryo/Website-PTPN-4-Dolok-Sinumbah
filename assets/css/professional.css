@@ -1103,6 +1103,7 @@ section, .section { padding-block: 80px; }
 .main section .section-title p,
 .main section .hero p,
 .main section .page-title p { text-align: center !important; }
+#hero .hero-content p { text-align: center !important; }
 .main section .organization-profile-content p,
 .main section .contact-details p { text-align: left !important; }
 .hero .hero-buttons .btn.btn-primary:hover,
